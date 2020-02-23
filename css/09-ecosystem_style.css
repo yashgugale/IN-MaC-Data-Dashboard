@@ -1,0 +1,337 @@
+/* Common new styling*/
+#info_card_text{
+  overflow-y: scroll;
+  height: 200px;
+
+}
+
+p{
+  color: #858796;
+}
+
+footer{
+  color: #858796;
+}
+
+.info-text{
+  color: #858796;
+}
+.container > div{
+  margin: 0px;
+  padding: 0px;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.region-select-button{
+  color: #007bff;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.card-body{
+  padding: 0.75rem;
+}
+
+.container {
+  max-width: 1420px;
+}
+.my-5 {
+    margin-top: 1rem !important;
+}
+
+.shadow {
+    box-shadow: 0 .5rem 1rem 
+    rgba(0,0,0,.15) !important;
+}
+
+.card {
+    max-width: 100%;
+}
+.card-text {
+    word-wrap: break-word;
+}
+
+#chart_area svg {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background: #d3d3d3;
+}
+
+.viz-title{
+  color: white;
+  text-align: center;
+  text-transform: uppercase; 
+  margin: auto;
+  position: center;
+  width: 100%;
+}
+
+/* CSS for viz pages, etc*/
+.bd-footer {
+    padding: 1rem 0;
+    margin-top: 2rem;
+    font-size: 85%;
+    text-align: center;
+    background-color: #212529;
+}
+
+.text-footer {
+    color: #636c72 !important;
+}
+
+div.tooltip { 
+  position: absolute;     
+  text-align: center;     
+  width: 80px;          
+  height: 35px;         
+  padding: 2px;       
+  font: 12px sans-serif;    
+  background: #fff; 
+  border: 0px;      
+  top: 0px;
+  left: 0px;  
+  pointer-events: none;     
+}
+
+/*.element_boundary {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}*/
+
+#visualization_data {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#logo {
+  height:50px;
+}
+
+.counties {
+  fill: steelblue;
+  stroke: #000;
+  stroke-width: 0.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  pointer-events: all;
+}
+
+html body {
+  background-color: #d3d3d3; 
+}
+
+/* Set the dimensions for the workforce logo */
+#workforce_logo{
+  width: 100%;
+  height: 100%;
+}
+
+/* Set the values for the workforce logo (brand in Bootstrap 4) */
+.navbar-brand {
+  height: 50px;
+  padding: 0px 0px;
+}
+
+/* Change the color of the navbar */
+.navbar {
+  background: #444;
+}
+
+/* Add arrows to the drop-down button */
+custom-select {
+  background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .75rem center;
+}
+
+/* Remove border color whenever an option from a select element is selected */
+.custom-select:focus {
+  border-color: #000;
+}
+
+/* Color codes for primary color palette */
+/* Dark brown color */
+.primary-brown-dark {
+  background: #a5782a;
+  color: #ffffff;
+}
+
+/* Normal brown color */
+.primary-brown-normal {
+  background: #ffd942;
+}
+
+/* Light brown color */
+.primary-brown-light {
+  background: #ffed9f;
+}
+
+#info_card_text a {
+  color: blue;
+}
+
+.page-title{
+  text-transform: uppercase;
+}
+
+/* Change the color of the card's header */
+.card-header {
+  /*background: #444;*/
+  /*text-transform: uppercase;*/
+}
+
+/* Remove the box shadow from the button on focus i.e. on selecting the button */
+.btn-region:focus {
+  box-shadow: none;
+}
+
+/* Propoerties for region 1 */
+.region-1 {
+  background-color: #A1D06C;
+  border: 1px solid #A1D06C;
+  color: #A1D06C;
+  box-shadow: 0 .5rem 1rem 
+  rgba(0,0,0,.15) !important;
+}
+
+/* Propoerties for region 2 */
+.region-2 {
+  background-color: #D0A7C7;
+  border: 1px solid #D0A7C7;
+  color: #D0A7C7;
+  box-shadow: 0 .5rem 1rem 
+  rgba(0,0,0,.15) !important;
+}
+
+/* Propoerties for region 3 */
+.region-3 {
+  background-color: #16BEB9;
+  border: 1px solid #16BEB9;
+  color: #16BEB9;
+  box-shadow: 0 .5rem 1rem 
+  rgba(0,0,0,.15) !important;
+}
+
+/* Properties for region 4 */
+.region-4 {
+  background-color: #FBE662;
+  border: 1px solid #FBE662;
+  color: #FBE662;
+  box-shadow: 0 .5rem 1rem 
+  rgba(0,0,0,.15) !important;
+}
+
+/* Propoerties for region 5 */
+.region-5 {
+  background-color: #F89D53;
+  border: 1px solid #F89D53;
+  color: #F89D53;
+  box-shadow: 0 .5rem 1rem 
+  rgba(0,0,0,.15) !important;
+}
+
+/* Propoerties for region 6 */
+.region-6 {
+  background-color: #077AC4;
+  border: 1px solid #077AC4;
+  color: #077AC4;
+}
+
+/* Propoerties for region 7 */
+.region-7 {
+  background-color: #DF4674;
+  border: 1px solid #DF4674;
+  color: #DF4674;
+  box-shadow: 0 .5rem 1rem 
+  rgba(0,0,0,.15) !important;
+}
+
+/* Properties for region 8 */
+.region-8 {
+  background-color: #51C9EB;
+  border: 1px solid #51C9EB;
+  color: #51C9EB;
+}
+
+/* Properties for region 9 */
+.region-9 {
+  background-color: #01A163;
+  border: 1px solid #01A163;
+  color: #01A163;
+  box-shadow: 0 .5rem 1rem 
+  rgba(0,0,0,.15) !important;
+}
+
+/* Properties for region 10 */
+.region-10 {
+  background-color: #FB746E;
+  border: 1px solid #FB746E;
+  color: #FB746E;
+}
+
+/* Properties for region 11 */
+.region-11 {
+  background-color: #985DA2;
+  border: 1px solid #985DA2;
+  color: #985DA2;
+  box-shadow: 0 .5rem 1rem 
+  rgba(0,0,0,.15) !important;
+}
+
+/* Properties for region 12 */
+.region-12 {
+  background-color: #C4C9CF;
+  border: 1px solid #C4C9CF;
+  color: #C4C9CF;
+  box-shadow: 0 .5rem 1rem 
+  rgba(0,0,0,.15) !important;
+}
+
+/* Border for the primary brown color elements */
+.primary-brown-border{
+  border: 1px solid #ffd942;
+}
+
+/* Change color of active component */
+.active{
+  color: white;
+}
+
+/* Change color of muted text */
+.text-muted{
+  color: lightgrey !important;
+  font-size: 0.8rem;
+}
+
+/* color of the text */
+.text-white{
+  color: white;
+}
+
+/* Grey text color*/
+.text-grey{
+  color: gray;
+}
+
+/* Black text color */
+.text-black{
+  color: black;
+}
+
+/* Change color of navbar link on hover */
+.nav-link:hover{
+  color: darkgrey;
+}
+
+/* Border of the toggler icon */
+.custom-toggler .navbar-toggler{
+  border-color: white;
+}
+
+/* Color of the hamburger */
+.custom-toggler .navbar-toggler-icon{
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Webpage for IN-MaC data visualization research">
+	<meta name="author" content="Yash Gugale">
+
+	<title>IN-MaC Data Visualization research</title>
+
+	<link rel="stylesheet" type="text/css" href="libraries/fontawesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="css/googleapis_nunito.css">
+
+	<link rel="stylesheet" type="text/css" href="css/sb_admin.css">
+	<!-- Bootstrap min -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!-- Custom styling for In-Mac Impact -->
+	<link rel="stylesheet" type="text/css" href="css/01-impact_style.css">
+
+    <!-- Script for slider  -->
+    <script src="https://unpkg.com/d3-simple-slider"></script>
+
+</head>
+
+<body id="page-top">
+
+	<!-- Page wrapper -->
+	<div id="wrapper">
+		
+		<!-- Sidebar -->
+		<!-- Creates the sidebar block -->
+		<!-- Kee the sidebar toggled b default -->
+		<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar">
+		
+			<!-- Sidebar - Brand -->
+			<a href="index.html" class="sidebar-brand d-flex align-items-center justify-content-center">
+				<!-- Icon for the brand -->
+				<div class="sidebar-brand-icon">
+					<!-- <a href="index.html"> -->
+						<img id="workforce_logo" src="img/in_mac_logo_cropped.png">
+						<!-- <div class="sidebar-brand-text">In-Mac<sup>TM</sup></div> -->
+           			 <!-- </a> -->
+					<!-- Bar chart icon -->
+					<!-- <i class="far fa-chart-bar"></i>	 -->
+				</div>
+				<!-- Text next to the icon -->
+				<!-- <div class="sidebar-brand-text mx-3">In-Mac<sup>TM</sup></div> -->
+			</a>
+
+			<!-- Divider between the top left icon and the contents -->
+			<hr class="sidebar-divider">
+
+			<!-- All dataset tabs -->
+			<!-- Heading -->
+			<div class="sidebar-heading">Datasets</div>
+
+			<!-- 1. In-Mac Impact data visualization -->
+			<li class="nav-item active">
+				<a href="index.html" class="nav-link">
+					<i class="fas fa-spinner"></i>
+					<span>IN-MaC Impact</span>
+				</a>
+			</li>
+
+			<!-- 2. In-Mac Microgrant data visualization -->
+			<!-- Make the Microgrant active by default -->
+			<li class="nav-item">
+				<a href="html/02-microgrant.html" class="nav-link">
+					<i class="fas fa-hand-holding-usd"></i>
+					<span>IN-MaC Micro-Grant</span>
+				</a>
+			</li>
+
+			<!-- 3. School Principal data visualization -->
+			<li class="nav-item">
+				<a href="html/03-school_principal.html" class="nav-link">
+					<i class="fas fa-school"></i>
+					<span>School Principal</span>
+				</a>
+			</li>
+
+			<!-- 4. a. Pre K-12 data visualization -->
+			<li class="nav-item">
+				<a href="html/04-pre_k12.html" class="nav-link">
+					<i class="fas fa-child"></i>
+					<span>Pre K-12</span>
+				</a>
+			</li>
+
+			<!-- 4. b. Post Secondary Education data visualization -->
+			<li class="nav-item">
+				<a href="html/05-post_secondary_education.html" class="nav-link">
+					<i class="fas fa-chalkboard-teacher"></i>
+					<span>Post Secondary Education</span>
+				</a>
+			</li>
+
+			<!-- 4. c. Adult and Workforce data visualization -->
+			<li class="nav-item">
+				<a href="html/06-adult_and_workforce.html" class="nav-link">
+					<i class="fas fa-user-tie"></i>
+					<span>Adult and Workforce</span>
+				</a>
+			</li>
+
+			<!-- 4. d. Business and Industry data visualization -->
+			<li class="nav-item">
+				<a href="html/07-business_and_industry.html" class="nav-link">
+					<i class="fas fa-briefcase"></i>
+					<span>Business and Industry</span>
+				</a>
+			</li>
+
+			<!-- 4. e. Local and Regional Plan data visualization -->
+			<li class="nav-item">
+				<a href="html/08-local_and_regional_plan.html" class="nav-link">
+					<i class="fas fa-globe-americas"></i>
+					<span>Local and Regional Plan</span>
+				</a>
+			</li>
+
+			<!-- 5. Indiana Ecosystems data visualization -->
+			<li class="nav-item">
+				<a href="html/09-ecosystems.html" class="nav-link">
+					<i class="fas fa-sitemap"></i>
+					<span>Ecosystems</span>
+				</a>
+			</li>
+
+			<!-- 7. School Attendance data visualization -->
+			<li class="nav-item">
+				<a href="html/11-school_attendance.html" class="nav-link">
+					<i class="fas fa-list-ul"></i>
+					<span>School Attendance</span>
+				</a>
+			</li>
+
+			<!-- Divider -->
+			<hr class="sidebar-divider d-none d-md-block">
+
+		</ul>
+		<!-- End of sidebar -->
+
+		<!-- B. Content Wrapper -->
+		<div id="content-wrapper" class="d-flex felx-column">
+			
+			<!-- Main content -->
+			<div id="content">
+
+				<!-- Topbar -->
+				<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+					
+					<!-- Sidebar Toggle (Topbar) - useful when display size is changed -->
+					<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+						<i class="fa fa-bars"></i>
+					</button>
+
+
+					<!-- Heading -->
+					<div class="col">
+						<h1 class="h3 mb-2 text-gray-800 py-3 font-weight-bold page-title">Exploring Indiana's Education and Workforce Data</h1>
+					</div>
+
+					<!-- Topbar Navbar -->
+					<ul class="navbar-nav ml-auto">
+
+						<!-- Website navigation video -->
+						<li class="nav-item mx-1">
+							<a href="#" class="nav-link" id="navigationVideo" role="button" data-toggle="modal" data-target="#infoVideoModal">
+								<!-- <i class="fas fa-video"></i> -->
+								<!-- <i class="fas fa-info"></i> -->
+								<i class="fas fa-question-circle"></i>
+							</a>
+						</li>
+
+						<!-- Divider to separate the user -->
+						<div class="topbar-divider d-none d-sm-block"></div>
+
+						<!-- Contact Information -->
+						<li class="nav-item mx-1">
+							<a href="#" class="nav-link" id="contactInfo" role="button" data-toggle="modal" data-target="#contactModal">
+								Contact
+							</a>
+						</li>
+
+						<!-- About the project Information -->
+						<li class="nav-item mx-1">
+							<a href="#" class="nav-link" id="aboutInfo" role="button" data-toggle="modal" data-target="#aboutModal">
+								About
+							</a>
+						</li>
+
+					</ul>				
+				</nav>
+				<!-- End of Topbar -->
+
+				<!-- C. Begin page content and layout -->
+				<div class="container">
+					
+					<!-- Wrap the heading into a row -->
+					<div class="row">
+						<div class="col">	
+							<!-- Page heading -->
+							<div class="d-sm-flex align-items-center justify-content-between mb-4">
+								<!-- <h1 class="h3 mb-0 text-gray-800">In-Mac Microgrant data</h1> -->
+								<h1 class="m-0 font-weight-bold text-primary h4 page-title">IN-MaC Impact across Indiana data</h1>
+
+								<a id="report_generation" href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+									<i class="fas fa-download fa-sm text-white-50"></i>
+									Generate Reports
+								</a>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Text info below title -->
+					<div class="row">
+						<div class="col">
+							<p class="mb-2 info-text"><b>Overview: </b>IN-MaC creates a stronger, more competitive manufacturing ecosystem for Indiana and the nation. IN-MaC does so by mobilizing its resources, expertise and network to strengthen the relationship between workforce education, innovation,  smart manufacturing, and research to elevate Indiana as the manufacturing destination.</p>
+
+							<p class="mb-2 info-text"><b>IN-MaC Ecosystem: </b>IN-MaC ecosystem connects workforce education activities across the state of Indiana. The essence of a workforce education ecosystem is to establish collaboration that allows each entity to interact successfully. Ecosystems come alive by connecting all the elements that are working in the same space. Creating intersections to facilitate industry, education, ideas, and resources.</p>
+
+							<p class="mb-2 info-text"><b>Ecosystem: </b>The ecosystems allows for a fast flow of information and resources to help those within workforce education and industry to quickly identify like work and developing strategy focused on workforce education. Highlight and sharing a vested interest in workforce education and industry across the state of Indiana. An approach to support meaningful change for disconnected entities. An ecosystem for educators, students, industry, and communities to create meaningful learning experiences and partnerships.</p>
+						</div>	
+					</div>
+
+					<!-- Empty row to add some extra spacing -->
+					<div class="row">
+						<div class="col mb-2"></div>
+					</div>
+
+					<!-- Data Visualizations and all the content here onwards: -->
+					<!-- Content Row: -->
+					<!-- Indiana Map -->
+					<div class="row">
+
+						<!-- Show the map visualization -->
+						<div class="col">
+								<div class="card shadow mb-4 border-left-primary">
+										<!-- Card header -->
+										<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+											<h6 class="m-0 font-weight-bold text-primary">IN-MaC impact across Indiana</h6>
+										</div>
+										<!-- Card body -->
+										<div class="card-body">
+											<div id="map_viz">
+												<!-- Draw map here -->
+											</div>
+										</div>
+									</div>
+						</div>
+						
+						<!-- Bar graph and other text: -->
+						<div class="col">
+
+							<!-- Top values to show -->
+							<div class="row">
+								
+								<!-- Value 1 -->
+								<div class="col">
+									<div class="container-fluid">
+										<div class="row justify-content-center">
+							              <div class="card border-left-primary shadow mb-1 col-xl-12 py-3">
+							                <div class="card-body">
+							                  <div class="row no-gutters align-items-center">
+							                    <div class="col">
+							                      <div class="h3 font-weight-bold text-gray-800 text-uppercase align-items-center text-info">IMPACTED</div>
+							                      <div class="h1 mb-0 font-weight-bold text-gray-800  align-items-center text-info" id="field_1">110K</div>
+							                    </div>
+							                  </div>
+							                </div>
+							              </div>
+							            </div>
+						            </div>
+								</div>
+
+								<!-- Value 2 -->
+								<div class="col">
+									<div class="container-fluid">
+										<div class="row justify-content-center">
+							              <div class="card border-left-primary shadow mb-1 col-xl-12">
+							                <div class="card-body">
+							                  <div class="row no-gutters align-items-center">
+							                    <div class="col">
+							                      <div class="h3 font-weight-bold text-uppercase align-items-center text-success">REGIONS IMPACTED</div>
+							                      <div class="h1 mb-0 font-weight-bold align-items-center text-success" id="field_2">12</div>
+							                    </div>
+							                  </div>
+							                </div>
+							              </div>
+							            </div>
+						            </div>
+								</div>
+
+								<!-- Value 3 -->
+								<div class="col">
+									<div class="container-fluid">
+										<div class="row justify-content-center">
+							              <div class="card border-left-primary shadow mb-1 col-xl-12">
+							                <div class="card-body">
+							                  <div class="row no-gutters align-items-center">
+							                    <div class="col">
+							                      <div class="h3 font-weight-bold text-gray-800 text-uppercase align-items-center text-danger">COUNTIES IMPACTED</div>
+							                      <div class="h1 mb-0 font-weight-bold text-gray-800 text-danger align-items-center" id="field_3">75%</div>
+							                    </div>
+							                  </div>
+							                </div>
+							              </div>
+							            </div>
+						            </div>
+								</div>
+
+							</div>
+
+							<div class="row py-4">
+								
+								<!-- Bar graph  -->
+								<div class="col-md-7 col-sm-7 col-xs-7">
+								
+									<p class="mb-2 info-text">Distribution of IN-MaC Impact across a given Economic Growth Region.</p>		
+									
+									<div class="card shadow mb-4 border-left-primary">
+										<!-- Card header -->
+										<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+											<h6 class="m-0 font-weight-bold text-primary">IN-MaC Impact across Indiana by County</h6>
+										</div>
+										<!-- Card body -->
+										<div class="card-body ">
+
+											<div id="bar_graph_county_viz">
+												<!-- Draw bar chart here -->
+											</div>
+										</div>
+									</div>
+
+									<!-- Text below the bar chart -->
+									<div class="col">
+										<p class="mb-2 info-text">IN-MaC Impact across the state of Indiana through its constant involvement in activities related to education and workforce development.</p>
+										<p class="mb-2 info-text">
+											<b>TA: </b>Technology Adoption activities.<br>
+											<b>E & WD: </b>Education and Workforce Development activities.
+										</p>
+									</div>
+
+								</div>
+
+								<!-- Stats info -->
+					            <div class="col-md-5 col-sm-5 col-xs-5">
+
+								<p class="mb-2 info-text">Statistics for the overall impact in the state of Indiana.</p>		
+								
+								<!-- Mean of all data -->
+								<div class="container-fluid">
+									
+								
+					            <div class="row justify-content-center">
+					              <div class="card border-left-primary shadow mb-1 col-xl-12">
+					                <div class="card-body">
+					                  <div class="row no-gutters align-items-center">
+					                    <div class="col">
+					                      <div class="text-xs font-weight-bold text-primary text-uppercase">Statistics for Indiana</div>
+					                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="region_mean_value">Region Mean : </div>
+					                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="region_median_value">Region Median :</div>
+					                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="region_mode_value">Region Mode :</div>
+					                    </div>
+					                  </div>
+					                </div>
+					              </div>
+					            </div>
+
+								<p class="row mb-2 py-2 info-text">The percent distribution of the IN-MaC's impact over Indiana's 12 EGR.</p>
+
+					            <!-- Draw the pie chart -->
+					            <div class="row justify-content-center">
+					              <div class="card border-left-primary shadow mb-1 col-xl-12">
+					                <div class="card-body">
+					                  <div class="row no-gutters align-items-center">
+					                    <div class="col">
+					                    	<div class="text-xs font-weight-bold text-primary text-uppercase">Percent IN-MaC Impact in each region</div>
+					                      	<div id="pie_chart_region_viz">
+					                      		<!-- Pie Chart here -->
+					                      	</div>
+					                    </div>
+
+					                  </div>
+					                </div>
+					              </div>
+					            </div>
+
+								</div>
+
+								</div>
+							</div>
+											
+						</div>
+
+					</div>
+
+					<!-- 2nd Row of visualizations (starting from the big bar graph) -->
+					<div class="row">
+						
+						<!-- Bar graph for all 92 counties -->
+						<div class="col">
+							
+							<p class="info-text">Comparison of the impact of IN-MaC in various counties spread in different regions over the entire state of Indiana.</p>
+
+							<div class="card shadow mb-4 border-left-primary">
+								<!-- Card header -->
+								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold text-primary">IN-MaC Impact across all 92 counties</h6>
+								</div>
+								<!-- Card body -->
+								<div class="card-body">
+									<div id="bar_graph_all_92_viz">
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- 3rd row of visualizations -->
+					<!-- Empty for now -->
+
+
+					</div>
+				<!-- End of main content -->
+				<!-- Footer -->
+				<footer class="sticky-footer bg-white">
+					<div class="container my-auto">
+						<div class="copyright text-center my-auto">
+						<span>Copyright &copy; <b>IN-MaC</b></span> <br>
+						<span>Created by <b>Byrd Data Viz Lab 2020</b></span>
+						<p id="lastModified"></p>
+						</div>
+					</div>
+				</footer>
+				<!-- End of Footer -->
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	  <!-- End of Page Wrapper -->
+
+	  <!-- Scroll to Top Button-->
+	  <a class="scroll-to-top rounded" href="#page-top">
+	    <i class="fas fa-angle-up"></i>
+	  </a>
+
+	  <!-- Info Video Modal-->
+	  <div class="modal fade" id="infoVideoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	    <div class="modal-dialog" role="document">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h5 class="h3 text-gray-800 font-weight-bold mb-0" id="exampleModalLabel">How to use this data dashboard?</h5>
+	          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+	            <span aria-hidden="true">×</span>
+	          </button>
+	        </div>
+	        <div class="modal-body">
+	        	<p>The following video will give you a brief explanation on how to use and navigate the data dashboard and use its various features to explore the data.</p>
+	        	<div class="embed-responsive embed-responsive-16by9">
+  					<iframe width="560" height="315" src="https://www.youtube.com/embed/jlDNmBQvbwY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+	        </div>
+	        <div class="modal-footer">
+	          <button class="btn btn-primary" type="button" data-dismiss="modal">Ok</button>
+	          <!-- <a class="btn btn-primary" href="login.html">Logout</a> -->
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+
+	  <!-- Contact Modal-->
+	  <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	    <div class="modal-dialog" role="document">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h5 class="h3 text-gray-800 font-weight-bold mb-0" id="exampleModalLabel">Contact information</h5>
+	          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+	            <span aria-hidden="true">×</span>
+	          </button>
+	        </div>
+	        <div class="modal-body">
+	        	<b>Project Sponsor: </b>Sascha Harrell, Education & Workforce Development Director, IN-MaC.<br>
+	        	<b>Email: </b><a href="mailto:smharrell@purdue.edu">smharrell@purdue.edu</a><br>
+	        	<b>Project Supervisor: </b>Dr. Vetria Byrd, Assistant Professor, Purdue University.<br>
+	        	<b>Email: </b><a href="mailto:vbyrd@purdue.edu">vbyrd@purdue.edu</a><br>
+	        	<b>Project developer: </b>Yash Gugale, Graduate Student, Purdue University.<br>
+	        	<b>Email: </b><a href="mailto:yashgugale@gmail.com">yashgugale@gmail.com</a><br>
+	        </div>
+	        <div class="modal-footer">
+	          <button class="btn btn-primary" type="button" data-dismiss="modal">Ok</button>
+	          <!-- <a class="btn btn-primary" href="login.html">Logout</a> -->
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+
+	  <!-- About Modal-->
+	  <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	    <div class="modal-dialog" role="document">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h5 class="h3 text-gray-800 font-weight-bold mb-0" id="exampleModalLabel">IN-MaC Education and Workforce Development Data Dashboard</h5>
+	          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+	            <span aria-hidden="true">×</span>
+	          </button>
+	        </div>
+	        <div class="modal-body">This data dashboard is designed to visualize education and workforce data for the state of Indiana.<br> Various datasets can be visited using the navigation tabs on the left panel. The main purpose is to find trends, patterns and relationships amoung various data fields for better decision making and collaboration.</div>
+	        <div class="modal-footer">
+	          <button class="btn btn-primary" type="button" data-dismiss="modal">Ok</button>
+	          <!-- <a class="btn btn-primary" href="login.html">Logout</a> -->
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+
+	<!-- External JS libraries -->
+	<script src="javascript/d3.min.js"></script>			<!-- D3 minified version -->
+	<script src="javascript/topojson.min.js"></script>	<!-- JSON file for the USA map -->
+
+	<!-- Bootstrap core javascript -->
+	<script type="text/javascript" src="libraries/jQuery/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="libraries/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Core plugin Javascript -->
+	<script type="text/javascript" src="libraries/jQuery-easing/jquery.easing.min.js"></script>
+
+	<!-- Custom scripts for all pages (we do not use main here because we want to study it. Replace it later)-->
+	<script src="javascript/sb-admin-2.js"></script>
+
+
+	<script type="text/javascript" src="javascript/county_color.js"></script>
+	<script type="text/javascript" src="javascript/county_bar_graph.js"></script>
+	<script type="text/javascript" src="javascript/generate_datasets.js"></script>
+	<script type="text/javascript" src="javascript/generate_stats.js"></script>
+	<script type="text/javascript" src="javascript/dropdown_content.js"></script>
+	<!-- <script type="text/javascript" src="../javascript/indiana_EGR_map.js"></script> -->
+	<script type="text/javascript" src="javascript/indiana_EGR_legend.js"></script>
+	<script type="text/javascript" src="javascript/01-impact/impact_legend.js"></script>
+	<script type="text/javascript" src="javascript/pieChart.js"></script>
+	<script type="text/javascript" src="javascript/bubbleChart.js"></script>
+	<script type="text/javascript" src="javascript/01-impact/append_border.js"></script>
+	<script type="text/javascript" src="javascript/01-impact/01-impact.js"></script>
+	
+	<!-- SVG to PNG -->
+	<script type="text/javascript" src="javascript/saveSvgAsPng.js"></script>
+
+	<!-- Script for jsPDF -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+		
+	<!-- HTML2CANVAS -->
+	<script type="text/javascript" src="javascript/html2canvas.js"></script>
+	<script type="text/javascript" src="javascript/lastModified.js"></script>
+	<script type="text/javascript" src="javascript/pdfSupport.js"></script>
+
+</body>
+</html>
