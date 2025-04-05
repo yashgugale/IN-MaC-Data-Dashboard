@@ -4,6 +4,10 @@ Data dashboard for visualizing education and workforce data for the state of Ind
 Masters Thesis Project for CGT at Purdue under the supervision of [Dr. Vetria Byrd](https://www.linkedin.com/in/vetriabyrd).<br><br>
 The main goal was to visualize the various Education and Workforce related datasets while maintaining the users mind-map of the [12 Economic Growth Regions](https://www.in.gov/dwd/about-dwd/regional-maps/).
 
+## Website
+
+The dashboard can be accessed at [IN-MaC Data Dashboard](https://yashgugale.github.io/IN-MaC-Data-Dashboard/).
+
 ## Research conducted
 
 Various quantitative and qualitative research methodologies were applied for this project including observation studies, usability testing, semi-structured interviews, etc. which can be found in the Appendix section of the final thesis document.
